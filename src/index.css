@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+.grass-bg {
+  background-image: url("/images/grand-grassland.png");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  animation: grass-breathe 18s ease-in-out infinite;
+}
+
+.grass-light {
+  background: radial-gradient(circle at 22% 28%, rgb(255 255 210 / 0.24), transparent 50%),
+    radial-gradient(circle at 75% 65%, rgb(165 255 190 / 0.12), transparent 45%);
+  animation: light-drift 16s ease-in-out infinite alternate;
+}
+
+.slogan-fade {
+  animation: slogan-rise 0.65s ease;
+}
+
+@keyframes grass-breathe {
+  0%,
+  100% {
+    transform: scale(1.03);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes light-drift {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(-1.5%, -1.5%, 0);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translate3d(1.5%, 1.5%, 0);
+  }
+}
+
+@keyframes slogan-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
